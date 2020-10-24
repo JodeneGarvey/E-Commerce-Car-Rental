@@ -1,0 +1,159 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="E_Commerce_Car_Rental.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%--Bootstrap css--%>
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%--Datatables css--%>
+    <link href="Datatables/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <%--Fontawesome css--%>
+    <link href="Fontawesome/css/all.css" rel="stylesheet" />
+    <%--My CSS--%>
+    <link href="css/CustomStyleSheet.css" rel="stylesheet" />
+
+    <link href="daterangepicker.css" rel="stylesheet" />
+    <%--jquery--%>
+    <script src="Bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+    <%--Popper js--%>
+    <script src="Bootstrap/js/popper.min.js"></script>
+    <%--Bootstrap js--%>
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+
+    <%--jquery---%>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="moment.min.js"></script>
+    <script src="daterangepicker.js"></script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+   
+</head>
+<body>
+    <form id="form1" runat="server">
+       <div>
+           <nav class="navbar navbar-expand-lg navbar-light">
+               <a class="navbar-brand" href="#">
+                   <img src="Images/carlogo.png" width="80" height="80"/>
+                   QuickCar
+               </a>
+
+               <button class="navbar-toggler" type="button" data-toggle="collapse" 
+                   data-target="#navbarSupportedContent" aria-controls="navbarSupportContent" 
+                   aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Homepage.aspx">Home</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="AboutUs.aspx">About</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="ContactUs.aspx">Contact</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                            </a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="Car.aspx">Cars</a>
+                    <a class="dropdown-item" href="SUVProduct.aspx">SUVs</a>
+                    <a class="dropdown-item" href="TruckProduct.aspx">Trucks</a>
+                    <a class="dropdown-item" href="HybridProduct.aspx">Hybrids</a>
+                </div>
+                       </li>
+
+                       <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" style="width:350px" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                       </form>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="UserLogin.aspx">Login</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="UserRegister.aspx">Register</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="AdminLogin.aspx">Adminstration</a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="ShoppingCart.aspx"><i class="fa fa-shopping-cart">Cart</i></a>
+                        </li>
+                    </ul>
+                   
+                </div>
+               
+               </nav>
+               
+
+       </div>
+       
+        <!--Main Content Placeholder-->
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <!--Main Content Placeholder-->
+
+        <footer>
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center footer-main">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                        </ul>
+                        <p class="text-center">Follow Our Social Media Pages</p>
+                    </div>
+                <div class="footer-menu">
+                    <ul>
+                        <li><a href="ContactUs.aspx">CONTACT US</a></li>
+                        <li><a href="Homepage.aspx">HOME</a></li>
+                        <li><a href="AboutUs.aspx">ABOUT US</a></li>
+                    </ul>
+                    <br>
+                    <hr>
+                    <div class="Details">
+                        <p class="icn"><i class="fa fa-map-marker"></i>&nbsp;&nbsp; 21 Main Ave, St.Catherine, Jamaica</p>
+                        <p class="inc"><i class="fa fa-phone"></i>&nbsp;&nbsp; (876)467-3567</p>
+                        <p class="inc"><i class="fa fa-envelope"></i>&nbsp;&nbsp; quickcar@gmail.com</p>
+                    </div>
+                </div>
+                        
+               </div>
+            </div>
+           
+               
+            
+
+            <div id="footer2" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p style="color:whitesmoke">&copy All Rights Reversed. <a class="footerlinks" href="#" target="_blank">Jodene P. Garvey</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+
+
+    </form>
+</body>
+</html>
