@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="UserRegister.aspx.cs" EnableEventValidation="false" Inherits="E_Commerce_Pet_Store.UserRegister" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
@@ -26,6 +26,7 @@
 
                         <div class="row">
                             <div class="col">
+                                <asp:Literal ID="litStatus" runat="server"></asp:Literal>
                                 <hr />
                             </div>
                         </div>

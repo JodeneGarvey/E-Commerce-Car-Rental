@@ -21,20 +21,21 @@ namespace E_Commerce_Pet_Store
         protected void Button1_Click(object sender, EventArgs e)
         {
             
-            /*UserModel user = new UserModel();
+            
+            UserModel user = new UserModel();
             User cus = RegisterUser();
 
             Label1.Text = user.InsertUser(cus);
-            */
+            
         }
 
-        /*private User RegisterUser()
+        private User RegisterUser()
         {
             User customer = new User();
 
             customer.FullName = TextBox1.Text;
-            //customer.DateofBirth = Convert.ToDateTime(TextBox2.Text);
-            //customer.ContactNumber = Convert.ToInt32(TextBox3.Text);
+            customer.DateofBirth = Convert.ToDateTime(TextBox2.Text);
+            customer.ContactNumber = TextBox3.Text;
             customer.EmailAddress = TextBox4.Text;
             customer.StreetAddress = TextBox5.Text;
             customer.District = TextBox6.Text;
@@ -45,6 +46,6 @@ namespace E_Commerce_Pet_Store
 
             return customer;
 
-        }*/
+        }
     }
 }

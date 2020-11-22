@@ -19,6 +19,7 @@
     <div class="carousel-item">
         <img src="Images/blackcarbanner.jpg" class="d-block w-100" alt="Black Car">
      <div class="carousel-caption d-none d-md-block">
+         
         <h5>Top Brands</h5>
         <p>Pick From Our Wide Variety of Car Brands.</p>
      </div>
@@ -109,7 +110,7 @@
 
         <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px">
             <div class="img-thumbnail product-item" style="height:300px">
-                <a href="CarProduct.aspx"><img class="img-responsive" title="Click to View Category" 
+                <a href="Car.aspx"><img class="img-responsive" title="Click to View Category" 
                     style="cursor:pointer;height:100px;width:250px"
                     src="Images/HondaCar.jpg" /></a>
 

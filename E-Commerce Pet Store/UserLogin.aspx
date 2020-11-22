@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="UserLogin.aspx.cs" Inherits="E_Commerce_Pet_Store.UserLogin" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto">
@@ -35,11 +35,13 @@
                                <label>User Name</label>
                                 <div class="form-group">
                                     <asp:TextBox runat="server" CssClass="form-control" ID="TxtUser" placeholder="User Name" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*" ControlToValidate="TxTUser"></asp:RequiredFieldValidator>
                                 </div>
 
                                 <label>User Password</label>
                                 <div class="form-group">
                                     <asp:TextBox ID="TxtPassword" CssClass="form-control" runat="server" placeholder="Password" TextMode="Password"  ></asp:TextBox>
+                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ControlToValidate="TxTPassword"></asp:RequiredFieldValidator>
                                 </div>
 
                                  <div class="form-group">

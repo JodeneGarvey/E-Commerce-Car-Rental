@@ -2,33 +2,47 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   
-
-    <asp:Repeater ID="d1" runat="server">
-        <HeaderTemplate>
-             <section>
-                <img src="Images/Car1Banner.jpg" class="img-fluid w-100"/>
-            </section>
-        </HeaderTemplate>
+    <section>
+      <img src="Images/Car1Banner.jpg" class="img-fluid w-100"/>
+   </section>
+    
+    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" Height="293px" Width="310px" RepeatColumns="4" RepeatDirection="Horizontal" OnItemCommand="DataList1_ItemCommand">
         <ItemTemplate>
-           <div class="col-md-3 col-sm-3 col-xs-6" style="margin-bottom:8px; width:1200px" aria-orientation="horizontal">
-            <div class="img-thumbnail product-item" style="height:400px; width:500px">
-              <img src="<%#Eval("ProductImage") %>" style="height:200px; width:250px"/>
-                    
-                  <div class="caption">
-                    <h6><%#Eval("ProductID") %></h6>
-                    <h5><%#Eval("ProductName") %></h5>
-                    Price:
-                    <p>$<%#Eval("ProductPrice") %></p>
-                   </div> 
-                </div>
-                 <a href="Product_Display.aspx?id=<%#Eval("id") %>"><asp:Button class="btn btn-info btn-block btn-sm" ID="Button1" runat="server" Text="Details" /></a>
-            </div>
+           <table>
+               <tr>
+                   <td style=" text-align:center; background-color:aquamarine">
+                       <asp:Label ID="Label1" runat="server" Text='<%#Eval("ProductID") %>' Font-Bold="true" ForeColor="White" ></asp:Label>
+                   </td>
+               </tr>
+               <tr>
+                   <td style=" text-align:center">
+                       <asp:Image ID="Image1" runat="server" BorderColor="#5F98F3" BorderWidth="1px" Height="279px" Width="278" ImageUrl='<%#Eval("ProductImage") %>' />
+                   </td>
+               </tr>
+               <tr>
+                   <td style=" text-align:center; background-color:aquamarine">
+                       <asp:Label ID="Label2" runat="server" Text='<%#Eval("ProductName") %>' ></asp:Label>
+                   </td>
+               </tr>
+               <tr>
+                   <td style=" text-align:center; background-color:aquamarine">
+                       <asp:Label ID="Label3" runat="server" Text='<%#Eval("ProductPrice") %>'></asp:Label>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <asp:Button ID="Button1" class="btn btn-info btn-block btn-sm" runat="server" Text="Details" CommandName="ProductDetails" CommandArgument='<%#Eval("ID") %>' />
+                   </td>
+               </tr>
+           </table>
             <br />
             <br />
         </ItemTemplate>
-       
-    </asp:Repeater>
-    
+    </asp:DataList>
+    <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QuickCarConnectionString %>" SelectCommand="SELECT [ID], [ProductID], [ProductName], [ProductPrice], [ProductImage] FROM [Product] WHERE ([CategoryID] = @CategoryID)">
+        <SelectParameters>
+            <asp:QueryStringParameter DefaultValue="4" Name="CategoryID" QueryStringField="4" Type="Int32" />
+        </SelectParameters>
+    </asp:SqlDataSource>
         
 </asp:Content>

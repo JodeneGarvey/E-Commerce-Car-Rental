@@ -11,7 +11,7 @@ namespace E_Commerce_Pet_Store
 {
 
 
-    public partial class Car
+    public partial class ProductDetails
     {
 
         /// <summary>

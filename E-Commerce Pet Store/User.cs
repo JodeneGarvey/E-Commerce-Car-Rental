@@ -20,8 +20,16 @@ namespace E_Commerce_Pet_Store
             this.ShoppingCarts = new HashSet<ShoppingCart>();
         }
     
-        public int Id { get; set; }
-        public Nullable<int> UserID { get; set; }
+        public Nullable<int> Id { get; set; }
+        public string FullName { get; set; }
+        public Nullable<System.DateTime> DateofBirth { get; set; }
+        public string ContactNumber { get; set; }
+        public string EmailAddress { get; set; }
+        public string StreetAddress { get; set; }
+        public string District { get; set; }
+        public string Parish { get; set; }
+        public string FullAddress { get; set; }
+        public string UserName { get; set; }
         public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

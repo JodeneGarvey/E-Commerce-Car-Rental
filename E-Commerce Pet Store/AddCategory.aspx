@@ -26,7 +26,7 @@
 
                                 <label>Category Name</label>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="T1" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                                    <asp:TextBox CssClass="form-control" ID="T1" runat="server" placeholder="Category Name"></asp:TextBox>
                                 </div>
 
                                  <div class="form-group">

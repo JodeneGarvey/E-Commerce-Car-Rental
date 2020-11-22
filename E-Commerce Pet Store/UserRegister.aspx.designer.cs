@@ -15,6 +15,15 @@ namespace E_Commerce_Pet_Store
     {
 
         /// <summary>
+        /// litStatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal litStatus;
+
+        /// <summary>
         /// TextBox1 control.
         /// </summary>
         /// <remarks>

@@ -7,23 +7,23 @@ namespace E_Commerce_Pet_Store
 {
     public class UserModel
     {
-        public string InsertUser(User customer)
+        public string InsertUser(User user)
         {
             try
             {
                 QuickCarEntities1 db = new QuickCarEntities1();
-                db.Users.Add(customer);
+                db.Users.Add(user);
                 db.SaveChanges();
 
-                return customer.FullName + "was successfully Inserted";
+                return user.FullName + "created an account";
             }
-            catch (Exception e)
+            catch(Exception e)
             {
                 return "Error:" + e;
             }
         }
 
-        public string UpdateUser(int id, User customer)
+        public string UpdateProduct(int id, User user)
         {
             try
             {
@@ -31,20 +31,19 @@ namespace E_Commerce_Pet_Store
 
                 User cus = db.Users.Find(id);
 
-                cus.FullName = customer.FullName;
-                cus.DateofBirth = customer.DateofBirth;
-                cus.ContactNumber = customer.ContactNumber;
-                cus.EmailAddress = customer.EmailAddress;
-                cus.StreetAddress = customer.StreetAddress;
-                cus.District = customer.District;
-                cus.Parish = customer.Parish;
-                cus.FullAddress = customer.FullAddress;
-                cus.UserName = customer.UserName;
-                cus.Password = customer.Password;
+                cus.FullName = user.FullName;
+                cus.DateofBirth = user.DateofBirth;
+                cus.ContactNumber = user.ContactNumber;
+                cus.EmailAddress = user.EmailAddress;
+                cus.StreetAddress = user.StreetAddress;
+                cus.District = user.District;
+                cus.Parish = user.Parish;
+                cus.FullAddress = user.FullAddress;
+                cus.UserName = user.UserName;
+                cus.Password = user.Password;
 
                 db.SaveChanges();
-                return customer.FullName + "was successfully updated";
-
+                return user.UserName + "was successfully updated";
             }
             catch (Exception e)
             {
@@ -52,18 +51,18 @@ namespace E_Commerce_Pet_Store
             }
         }
 
-        public string DeleteUser(int id)
+        public string DeleteProduct(int id)
         {
             try
             {
                 QuickCarEntities1 db = new QuickCarEntities1();
-                User customer = db.Users.Find(id);
+                User user = db.Users.Find(id);
 
-                db.Users.Attach(customer);
-                db.Users.Remove(customer);
+                db.Users.Attach(user);
+                db.Users.Remove(user);
                 db.SaveChanges();
 
-                return customer.FullName + "was successfully deleted";
+                return user.UserName + "was deleted successfully";
             }
             catch (Exception e)
             {
@@ -75,10 +74,10 @@ namespace E_Commerce_Pet_Store
         {
             try
             {
-                using(QuickCarEntities1 db = new QuickCarEntities1())
+                using (QuickCarEntities1 db = new QuickCarEntities1())
                 {
-                    User customer = db.Users.Find(id);
-                    return customer;
+                    User user = db.Users.Find(id);
+                    return user;
                 }
             }
             catch (Exception)
@@ -87,18 +86,18 @@ namespace E_Commerce_Pet_Store
             }
         }
 
-        public List<User> GetAllCustomers()
+        public List<User> GetAllUsers()
         {
             try
             {
-                using(QuickCarEntities1 db = new QuickCarEntities1())
+                using (QuickCarEntities1 db = new QuickCarEntities1())
                 {
-                    List<User> customers = (from x in db.Users select x).ToList();
+                    List<User> users = (from x in db.Users select x).ToList();
 
-                    return customers;
+                    return users;
                 }
             }
-            catch(Exception)
+            catch (Exception)
             {
                 return null;
             }
